@@ -67,21 +67,21 @@ model.summary()
 # plt.show()
 
 
-# 4. Train the model
-history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.1)
+# 5. Train the model
+history = model.fit(X_train, y_train, epochs=5, batch_size=4, validation_split=0.1)
 
-# 5. Evaluate the model on the test set
+# 6. Evaluate the model on the test set
 loss, accuracy = model.evaluate(X_test, y_test)
 print(f"\nTest Loss: {loss:.4f}")
 print(f"Test Accuracy: {accuracy:.4f}")
 
-# 6. Make predictions
+# 7. Make predictions
 predictions = model.predict(X_test)
 
 for x, y, pred in zip(X_test, y_test, predictions):
     print(f"X: {x} y: {y} Prediction: {pred}")
 
-# Convert probabilities to binary class labels (0 or 1)
+# 8. Convert probabilities to binary class labels (0 or 1)
 # The confidence value indicates the probability of the prediction being labeled as a '1'
 confidence = 0.70
 predicted_classes = (predictions > confidence).astype(int)

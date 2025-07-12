@@ -39,7 +39,7 @@ model = keras.Sequential([
 # a test loss, test accuracy tuple, otherwise it will only return the loss
 # model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-model.compile(optimizer='sgd', loss='mse', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 
 # model = keras.Sequential([
@@ -68,7 +68,7 @@ model.summary()
 
 
 # 5. Train the model
-history = model.fit(X_train, y_train, epochs=5, batch_size=4, validation_split=0.1)
+history = model.fit(X_train, y_train, epochs=20, batch_size=4, validation_split=0.1)
 
 # 6. Evaluate the model on the test set
 loss, accuracy = model.evaluate(X_test, y_test)
